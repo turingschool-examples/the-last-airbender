@@ -3,6 +3,8 @@
 
 <% @nation_members.each do |member| %>
   <section id="member-<%=member[:_id]%>">
+    <img id="member_photo-<%=member[:_id]%>" src="<%=member[:photoUrl]%>"
+    <br>
     <h3>Name: <%= member[:name]%></h5>
     <p>Allies: <% member[:allies].each do |allie| %>
                 <%= allie %></p>
