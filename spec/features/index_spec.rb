@@ -11,6 +11,12 @@ RSpec.describe 'Welcome Page' do
     click_button 'Search For Members'
 
     expect(current_path).to eq(search_path)
+    expect(page).to have_content("Fire Nation Members")
+    expect(page).to have_content("Total Number of Members:")
+    expect(page).to have_content("Name:")
+    expect(page).to have_content("Allies:")
+    expect(page).to have_content("Enemies:")
+    expect(page).to have_content("Affiliations:")
     end
   end
 end
