@@ -1,9 +1,14 @@
 class SearchController < ApplicationController
   def index
-    nation = params[:nation]
+    nation = params["affiliation"]
 
     response = conn.get("/api/v1/characters?affiliation=Fire+Nation")
-    JSON.parse(response.body)
+    result = JSON.parse(response.body)
+    @members = result
+
+    found_member = @members.find do |member|
+      member["affiliation"] == nation
+    end
   end
 
   private
