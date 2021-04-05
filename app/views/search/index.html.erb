@@ -1,10 +1,12 @@
 <h1> <%= @nations.size %> Results</h1>
 <% @nations.each do |nation|%>
   <section class='nation'>
-    <h2 class='name'> <% nation[:name] %>
-    <h2 class='photo'> <% nation[:photoUrl] %>
-    <h2 class='allies'> <% nation[:allies] %>
-    <h2 class='enemies'> <% nation[:enemies] %>
-    <h2 class='affiliations'> <% nation[:affiliation] %>
+    <h2 class='name'> <%= nation.name %>
+      <ul>
+        <li class='photo'> <%= nation.photo %>
+        <li class='allies'> <%= nation.allies %>
+        <li class='enemies'> <%= nation.enemies %>
+        <li class='affiliations'> <%= nation.affiliations %>
+      </ul>
   </section>
 <% end %>
