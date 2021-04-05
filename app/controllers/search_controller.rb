@@ -4,7 +4,8 @@ class SearchController < ApplicationController
     nation_clean = nation.gsub("_", "+")
     conn = Faraday.new("https://last-airbender-api.herokuapp.com")
     response = conn.get("/api/v1/characters?affiliation=#{nation_clean}")
-    @nation = JSON.parse(response.body, symbolize_names: true)
-    # require "pry"; binding.pry
+    data = JSON.parse(response.body, symbolize_names: true)
+    @person = Person.new(data)
+    require "pry"; binding.pry
   end
 end
