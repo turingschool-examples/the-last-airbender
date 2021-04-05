@@ -7,9 +7,6 @@ RSpec.describe 'When I visit the four nations page' do
     And I see a list with the detailed information
     for the first 25 members of the Fire Nation' do
 
-    # nation = create(:nation)
-    # person = create_list(:person, 20, nation_id: nation.id)
-
     visit root_path
 
     expect(page).to have_select(:nation)
@@ -20,12 +17,15 @@ RSpec.describe 'When I visit the four nations page' do
 
     expect(current_path).to eq(search_path)
 
-    # within("#person-id") do
-    #
-    # end
+    # # within("#person-id") do
+    #   # expect(#persons id).to eq(person._id)
+    #   expect(person).to have_content("Fire nation train conductor")
+    #   expect(person).to have_content("Aang")
+    #   expect(person).to have_content("Combustion Man")
+    #   expect(person).to have_content("Fire Nation Fire Nation train")
+    # # end
 
-    expect(total_residents).to eq(100)
-    expect(_id.count).to eq(25)
-
+    expect(page).to have_content("97 Affiliates")
+    expect("Chan (fire nation admiral)").to appear_before("Fire nation train conductor")
   end
 end

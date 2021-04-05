@@ -1,3 +1,5 @@
+<h2>The <%= @nation_clean %> has <%= @nation_count.count %> Affiliates</h2>
+<hr><br>
 <% @nation.each do |person| %>
   <section id="person-id">
     <h1><% person[:_id] %></h1>
