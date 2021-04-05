@@ -7,6 +7,12 @@ RSpec.describe BenderService do
 
       expect(data).to be_a(Array)
       expect(data[0]).to be_a(Hash)
+      expect(data[0]).to be_a(Hash)
+      expect(data[0][:name]).to be_a(String)
+      expect(data[0][:allies]).to be_a(Array)
+      expect(data[0][:enemies]).to be_a(Array)
+      expect(data[0][:affiliation]).to be_a(String)
+      expect(data[1][:photoUrl]).to be_a(String)
     end
   end
 end
