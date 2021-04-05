@@ -10,12 +10,22 @@ describe "When I visit the root path and select fire nation and click search for
     expect(current_path).to eq(search_path)
   end
 
-  it "displays the number of people on who live in the fire nation" do
+  it "displays the number of people who live in the fire nation" do
     visit root_path
 
     select "Fire Nation", :from => "nation"
     click_button('Search For Members')
 
     expect(page).to have_content('97 people who live in the fire_nation')
+  end
+
+  it "displays the name of the top 25 people who live in the fire nation " do
+    visit root_path
+
+    select "Fire Nation", :from => "nation"
+    click_button('Search For Members')
+
+    expect(page.all('p', count: 26))
+    expect(page).to have_content('Name: Chan (Fire Nation admiral)')
   end
 end

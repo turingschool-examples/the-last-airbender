@@ -5,12 +5,15 @@ class SearchController < ApplicationController
       r.params[:affiliation] = nation
       r.params[:perPage] = 200
     end
-    parsed = JSON.parse(response.body, symbolize_names: true)
+    @parsed = JSON.parse(response.body, symbolize_names: true)
 
     @people = []
 
-    parsed.each do |person|
-      @people << person[:name]
+    @parsed[0..24].each do |person|
+      @people << {:name => person[:name],
+                  :allies => person[:allies],
+                  :enemies => person[:enemies]
+      }
     end
   end
 end

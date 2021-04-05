@@ -1,1 +1,7 @@
-<p><%= @people.length %> people who live in the <%= params[:nation] %></p>
+<p><%= @parsed.length %> people who live in the <%= params[:nation] %></p>
+
+<% @people.each do |person| %>
+  <div style="border: 1px solid black;">
+    <p>Name: <%= person[:name] %></p>
+  </div>
+<% end  %>
