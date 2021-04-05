@@ -1,10 +1,15 @@
 <h1>Search for Members in <%= @nation %></h1>
+<h3> <%= @total_members %> Members </h3>
 
 <% @nation_members.each do |member| %>
-  <section id="member-<%=member.id%>">
-    <h5>Name: <%= member.name %></h5>
-    <p>Alies: <%= member.alies %></p>
-    <p>Enemies: <%= member.enemies %></p>
-    <p>Affiliations: <%= member.affiliations %></p>
+  <section id="member-<%=member[:_id]%>">
+    <h3>Name: <%= member[:name]%></h5>
+    <p>Allies: <% member[:allies].each do |allie| %>
+                <%= allie %></p>
+              <% end %>
+    <p>Enemies: <% member[:enemies].each do |enemey| %>
+                  <%= enemey %></p>
+                <% end %>
+    <p>Affiliations: <%= member[:affiliation] %></p>
   </section>
 <% end %>
