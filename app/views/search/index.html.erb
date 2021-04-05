@@ -1,1 +1,14 @@
 <p>Nation Population: <%= @members.count %></p>
+
+<section class="members">
+  <ul>
+    <% @members[0..24].each do |member| %>
+      <li> <%= member[:name] %>
+          <%= member[:allies] %>
+          <%= member[:enemies] %>
+          <%= member[:affiliation] %>
+      </li>
+          <%= image_tag("#{member[:photoUrl]}", alt: "photo no available") %>
+    <% end %>
+  </ul>
+</section>
