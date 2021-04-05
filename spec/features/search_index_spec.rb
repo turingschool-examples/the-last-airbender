@@ -7,6 +7,9 @@ RSpec.describe 'When I visit the four nations page' do
     And I see a list with the detailed information
     for the first 25 members of the Fire Nation' do
 
+    # nation = create(:nation)
+    # person = create_list(:person, 20, nation_id: nation.id)
+
     visit root_path
 
     expect(page).to have_select(:nation)

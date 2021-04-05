@@ -1,10 +1,11 @@
 <% @nation.each do |person| %>
   <section id="person-id">
-    <h1><%= person[:name].capitalize %></h1>
+    <h1>Name: <%= person[:name].capitalize %></h1>
+    <%= image_tag "#{person[:photoUrl]}" %>
     <h1><% person[:_id] %></h1>
-    <h1><%= person[:allies] %></h1>
-    <h1><%= person[:enemies] %></h1>
-    <h1><%= person[:affiliation] %></h1>
+    <h1>Allies: <%= person[:allies] %></h1>
+    <h1>Enemies: <%= person[:enemies] %></h1>
+    <h1>Affiliations: <%= person[:affiliation] %></h1>
     <hr><br>
   </section>
 <% end %>
