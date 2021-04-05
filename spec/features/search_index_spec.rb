@@ -7,6 +7,8 @@ RSpec.describe 'When I visit the four nations page' do
     And I see a list with the detailed information
     for the first 25 members of the Fire Nation' do
 
+      
+
     visit root_path
 
     expect(page).to have_select(:nation)
@@ -16,6 +18,10 @@ RSpec.describe 'When I visit the four nations page' do
     click_on "Search For Members"
 
     expect(current_path).to eq(search_path)
+
+    within("#person") do
+
+    end
 
     expect(total_residents).to eq(100)
     expect(_id.count).to eq(25)
