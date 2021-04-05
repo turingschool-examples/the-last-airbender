@@ -10,5 +10,12 @@
         <%= person[:allies] %>
       <% end  %>
     </li>
+    <dd>Enemies:
+      <% if person[:enemies].empty? %>
+        None
+      <% else  %>
+        <%= person[:enemies] %>
+      <% end  %>
+    </dd>
   </div>
 <% end  %>
