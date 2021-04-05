@@ -25,8 +25,8 @@ class MemberService
       page_num += 1
       more_members = next_page(nation, page_num)
       @full_count << more_members
-      @full_count.flatten.length
     end
+    @full_count.flatten.length
   end
 
   def self.next_page(nation, page_num)
