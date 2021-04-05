@@ -12,6 +12,11 @@ RSpec.describe NationFacade do
 
       first = all_nations.first
       expect(first).to be_a(Nation)
-    end   
+
+      expect(first.name).to be_a String
+      expect(first.allies).to be_a Array
+      expect(first.enemies).to be_a Array
+      expect(first.affiliations).to be_a String
+    end
   end
 end
