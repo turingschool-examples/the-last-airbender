@@ -6,8 +6,8 @@ RSpec.describe "As a user when I " do
         visit root_path
         select 'Fire Nation',  from: 'nation'
         click_button 'Search For Members'
-        expect(path).to be("/search")
-        expect(page).to have_content("100 Members")
+        expect(current_path).to eq("/search")
+        expect(page).to have_content("96 Members")
     end
   end
 end
