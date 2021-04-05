@@ -14,4 +14,8 @@ class MemberFacade
                    })
     end
   end
+
+  # def self.get_length(nation)
+  #   MemberService.get_length()
+  # end
 end

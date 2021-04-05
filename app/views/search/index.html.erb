@@ -1,1 +1,12 @@
 <p> 96 Members</p>
+<% @members.each do |member|%>
+<p>  Name:<%= member.name %></p>
+<p>  Photo:<td style="text-align: center"><img src=<%=member.photo%>" alt="<%= member.name %>" style="max-height: 500px; max-width: 500px"></td> </p>
+    <% member.allies.each do |ally|%>
+<p>  Allies:<%= ally %></p>
+<%end %>
+  <% member.enemies.each do |enemy|%>
+     <p> Enemy:<%=enemy %> </p>
+     <%end %>
+<p> Affiliation: <%= member.affiliation %>  </p>
+<%end %>
