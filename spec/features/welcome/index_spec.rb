@@ -4,7 +4,7 @@ describe "As a user" do
   describe "When I visit the home page" do
     it "I can select a tribe and I am taken to a page with info about tribe" do
       visit root_path
-      
+
       select('Fire Nation', from: 'nation')
 
       click_button("Search For Members")
@@ -15,13 +15,30 @@ describe "As a user" do
 
   describe 'on the search page' do
     it "shows information abbout the tribe" do
-      # Then I should see the total number of people who live in the Fire Nation. (should be close to 100)
-      # And I should see a list with the detailed information for the first 25 members of the Fire Nation.
-      # And for each of the members I should see:
-      # - The name of the member (and their photo, if they have one)
-      # - The list of allies or "None"
-      # - The list of enemies or "None"
-      # - Any affiliations that the member has
-    end
+      #maybe comeback and use allow instance of or just get change structure of this test
+      visit root_path
+      select('Fire Nation', from: 'nation')
+      click_button("Search For Members")
+      expect(current_path).to eq("/search")
+
+      expect(page).to have_content("Nation Population: 101")
+
+      members = SearchController.call_to_api_for_info
+
+      within ".members" do
+        expect(page).to have_content("#{members.first.name}")
+        expect(page).to have_content("#{members.first.photo}")
+        expect(page).to have_content("#{members.first.allies}")
+        expect(page).to have_content("#{members.first.enemies}")
+        expect(page).to have_content("#{members.first.affiliations}")
+
+        expect(page).to have_content("#{members.last.name}")
+        expect(page).to have_content("#{members.last.photo}")
+        expect(page).to have_content("#{members.last.allies}")
+        expect(page).to have_content("#{members.last.enemies}")
+        expect(page).to have_content("#{members.last.affiliations}")
+        expect(page.all('li', count: 25))
+      end
+
   end
 end
