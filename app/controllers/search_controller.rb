@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
 
   def index
-    require "pry"; binding.pry
-    @members = AvatarFacade.total_members(params[:nation])
+    @total_members = AvatarFacade.total_members(params[:nation])
+    @members = AvatarFacade.get_members(params[:nation])
   end
 end

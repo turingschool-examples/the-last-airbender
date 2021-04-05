@@ -1,3 +1,20 @@
 <header>
-  Total Members of Nation: <%= @members %>
+  Total Members of Nation: <%= @total_members %>
 </header>
+<header>
+  Members:
+</header>
+
+<% @members.each do |member| %>
+<div class="col-auto">
+      <div class="card" style="width: 18rem;" id=" <%= member[:name] %> ">
+        <img class="card-img-top" src="<%= member[:photoUrl] %>" alt="<%= member[:name] %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= member[:name] %></h5>
+          <p class="card-text">Allies: <%= member[:allies] %></p>
+          <p class="card-text">Enemies: <%= member[:enemies] %></p>
+          <p class="card-text">Affiliation: <%= member[:affiliation] %></p>
+        </div>
+      </div>
+    </div>
+<% end %>

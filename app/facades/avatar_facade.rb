@@ -1,11 +1,9 @@
 class AvatarFacade
 
   def self.get_members(nation)
-    AvatarService.get_nations_members(nation)
-  end
-
-  def members_list(nation)
-    
+    AvatarService.get_nation(nation).each do |member|
+      MemberInfo.new(member)
+    end
   end
 
   def self.total_members(nation)
