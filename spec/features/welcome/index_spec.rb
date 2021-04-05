@@ -21,7 +21,7 @@ describe "As a user" do
       click_button("Search For Members")
       expect(current_path).to eq("/search")
 
-      expect(page).to have_content("Nation Population: 101")
+      expect(page).to have_content("Nation Population: 111")
 
       # members = SearchController.call_to_api_for_info
 
@@ -39,6 +39,6 @@ describe "As a user" do
       #   expect(page).to have_content("#{members.last.affiliations}")
       #   expect(page.all('li', count: 25))
       # end
-    end 
+    end
   end
 end
