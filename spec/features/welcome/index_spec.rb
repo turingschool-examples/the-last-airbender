@@ -27,14 +27,14 @@ describe "As a user" do
         expect(page.all('li', count: 25))
 
         expect(page).to have_content("Name: Bolin")
-        expect(page).to have_content('Allies: ["Asami Sato"] ')
-        expect(page).to have_content('Enemies: ["Amon"] ')
+        expect(page).to have_content('Allies: ["Asami Sato"]')
+        expect(page).to have_content('Enemies: ["Amon"]')
         expect(page).to have_content("Fire Ferrets (formerly) Kuvira's army (deserted) Team Avatar Triple Threat Triad (formerly) Republic City Police")
         # expect(page).to have_xpath("https://vignette.wikia.nocookie.net/avatar/images/d/d4/Bolin.png/revision/latest?cb=20150406232314")
 
         expect(page).to have_content("Name: Fire Nation airship captain")
-        expect(page).to have_content('Allies: ["Qin Lee"]  ')
-        expect(page).to have_content('Enemies: ["Sokka"]  ')
+        expect(page).to have_content('Allies: ["Qin Lee"]')
+        expect(page).to have_content('Enemies: ["Sokka"]')
         expect(page).to have_content("Fire Nation")
 
       end

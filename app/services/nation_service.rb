@@ -1,6 +1,5 @@
 class NationService
   def self.conn
-    # response = Faraday.get("https://last-airbender-api.herokuapp.com/api/v1/characters?perPage=497")
     Faraday.new("https://last-airbender-api.herokuapp.com/api/v1/")
   end
 
