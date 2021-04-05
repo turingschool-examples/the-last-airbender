@@ -20,6 +20,8 @@ gem 'figaro'
 
 group :development, :test do
   gem 'pry'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :test do

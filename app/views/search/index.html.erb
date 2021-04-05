@@ -1,12 +1,10 @@
-<div align="center">
-  <% @nation.each do |person| %>
-    <section id="person">
-      <h1><%= person.name.capitalize %></h1>
-
-      <h1><%= person.allies %></h1>
-      <h1><%= person.enemies %></h1>
-      <h1><%= person.affiliation %></h1>
-      <%=   require "pry"; binding.pry %>
-    </section>
-  <% end %>
-</div>
+<% @nation.each do |person| %>
+  <section id="person-id">
+    <h1><%= person[:name].capitalize %></h1>
+    <h1><% person[:_id] %></h1>
+    <h1><%= person[:allies] %></h1>
+    <h1><%= person[:enemies] %></h1>
+    <h1><%= person[:affiliation] %></h1>
+    <hr><br>
+  </section>
+<% end %>
