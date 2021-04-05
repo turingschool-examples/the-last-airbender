@@ -13,6 +13,7 @@ RSpec.describe "As a user", type: :feature do
       click_on "Search For Members"
       # Then I should be on page "/search"
       expect(current_path).to eq("/search")
+      expect(page).to have_content("Fire Nation")
       # Then I should see the total number of people who live in the Fire Nation. (should be close to 100)
 
       # And I should see a list with the detailed information for the first 25 members of the Fire Nation.
