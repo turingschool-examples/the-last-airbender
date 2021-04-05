@@ -11,6 +11,9 @@ RSpec.describe "Search Index Page" do
           click_button('Search For Members')
           expect(current_path).to eq(search_path)
       end
+      it "I should see the total number of people who live in the Fire Nation" do
+
+      end
     end
   end
 end
