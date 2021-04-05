@@ -3,5 +3,12 @@
 <% @people.each do |person| %>
   <div style="border: 1px solid black;">
     <p>Name: <%= person[:name] %></p>
+    <li>Allies:
+      <% if person[:allies].empty? %>
+        None
+      <% else  %>
+        <%= person[:allies] %>
+      <% end  %>
+    </li>
   </div>
 <% end  %>

@@ -19,7 +19,7 @@ describe "When I visit the root path and select fire nation and click search for
     expect(page).to have_content('97 people who live in the fire_nation')
   end
 
-  it "displays the name of the top 25 people who live in the fire nation " do
+  it "displays the name of the top 25 people who live in the fire nation" do
     visit root_path
 
     select "Fire Nation", :from => "nation"
@@ -27,5 +27,15 @@ describe "When I visit the root path and select fire nation and click search for
 
     expect(page.all('p', count: 26))
     expect(page).to have_content('Name: Chan (Fire Nation admiral)')
+  end
+
+  it "displays the names of allies of the top 25 people who live in the fire nation or none" do
+    visit root_path
+
+    select "Fire Nation", :from => "nation"
+    click_button('Search For Members')
+
+    expect(page.all('li', count: 25))
+    expect(page).to have_content('Allies: ["Ozai"]')
   end
 end
