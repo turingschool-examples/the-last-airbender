@@ -8,8 +8,13 @@ RSpec.describe NationService do
 
         result = NationService.get_nation_info(nation)
 
-        expect(result).to be_a Hash
+        expect(result).to be_a Array
 
+        first = result.first
+        expect(first).to have_key :name
+        expect(first[:name]).to be_a String
+
+        # I didn't have time to finish this test 
       end
     end
   end
