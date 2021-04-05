@@ -1,2 +1,14 @@
 <h1> Members of <%= @nation %></h1>
 <h3> Total People in Nation: <%= @members.count %> </h3>
+<% @members[0...25].each do |member| %>
+  <div class="member">
+  <p> Name: <%= "#{member[:name]}" %></p>
+  <% if member[:allies].empty? %>
+    <p> None </p>
+  <% else %>
+    <% member[:allies].each do |ally| %>
+      <%= "#{ally}" %>
+    <% end %>
+  <% end %>
+  </div>
+<% end %>

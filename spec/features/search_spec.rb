@@ -15,7 +15,13 @@ RSpec.describe 'search for a members of a nation' do
 
   end
 
-  xit "displays details for first 25 members of nation" do
+  it "displays details for first 25 members of nation" do
+    save_and_open_page
+    expect(page).to have_css('.member', count: 25)
 
+    within first(".member") do
+      expect(page).to have_content("Name: Chan (Fire Nation admiral)")
+      
+    end
   end
 end
