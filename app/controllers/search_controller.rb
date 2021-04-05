@@ -12,7 +12,8 @@ class SearchController < ApplicationController
     @parsed[0..24].each do |person|
       @people << {:name => person[:name],
                   :allies => person[:allies],
-                  :enemies => person[:enemies]
+                  :enemies => person[:enemies],
+                  :affiliation => person[:affiliation]
       }
     end
   end
