@@ -2,16 +2,16 @@
 <h3> <%= @total_members %> Members </h3>
 
 <% @nation_members.each do |member| %>
-  <section id="member-<%=member[:_id]%>">
-    <img id="member_photo-<%=member[:_id]%>" src="<%=member[:photoUrl]%>"
+  <section id="member-<%=member.id%>">
+    <img id="member_photo-<%=member.id%>" src="<%=member[:photoUrl]%>"
     <br>
-    <h3>Name: <%= member[:name]%></h5>
-    <p>Allies: <% member[:allies].each do |allie| %>
+    <h3>Name: <%= member.name%></h5>
+    <p>Allies: <% member.allies.each do |allie| %>
                 <%= allie %></p>
               <% end %>
-    <p>Enemies: <% member[:enemies].each do |enemey| %>
+    <p>Enemies: <% member.enemies.each do |enemey| %>
                   <%= enemey %></p>
                 <% end %>
-    <p>Affiliations: <%= member[:affiliation] %></p>
+    <p>Affiliations: <%= member.affiliation %></p>
   </section>
 <% end %>
