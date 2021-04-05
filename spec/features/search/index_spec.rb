@@ -58,4 +58,13 @@ describe "When I visit the root path and select fire nation and click search for
     expect(page.all('em', count: 25))
     expect(page).to have_content('Affiliation: Fire Nation Navy')
   end
+
+  it "displays the photo of the top 25 people who live in the fire nation" do
+    visit root_path
+
+    select "Fire Nation", :from => "nation"
+    click_button('Search For Members')
+
+    expect(page.all('img', count: 25))
+  end
 end
