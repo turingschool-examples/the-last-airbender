@@ -11,11 +11,11 @@ RSpec.describe MemberFacade do
 
   it "converts data into an openstruct object " do
     fire_nation = MemberFacade.find_members('fire_nation')
-    expect(fire_nation).to be_an(OpenStruct)
-      expect(fire_nation).to respond_to(:name)
-      expect(fire_nation).to respond_to(:photoUrl)
-      expect(fire_nation).to respond_to(:allies)
-      expect(fire_nation).to respond_to(:enemies)
-      expect(fire_nation).to respond_to(:affiliation)
+    expect(fire_nation[0]).to be_an(OpenStruct)
+      expect(fire_nation[0]).to respond_to(:name)
+      expect(fire_nation[0]).to respond_to(:photo)
+      expect(fire_nation[0]).to respond_to(:allies)
+      expect(fire_nation[0]).to respond_to(:enemies)
+      expect(fire_nation[0]).to respond_to(:affiliation)
   end
 end

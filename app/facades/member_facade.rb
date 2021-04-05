@@ -4,13 +4,14 @@ class MemberFacade
     MemberService.get_endpoints(nation)
   end
 
-  # def self.get_objects(all_members)
-  # all_members[:data].map do |input|
-  #   OpenStruct.new({name: input[:name],
-  #                  description: input[:description],
-  #                  directions: input[:directionsInfo],
-  #                  hours: input[:operatingHours][0][:standardHours]
-  #                  })
-  #   end
-  # end
+  def self.get_objects(all_members)
+    all_members.map do |input|
+    OpenStruct.new({name: input[:name],
+                   photo: input[:photoUrl],
+                   allies: input[:allies],
+                   enemies: input[:enemies],
+                   affiliation: input[:affiliation]
+                   })
+    end
+  end
 end

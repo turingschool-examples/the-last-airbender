@@ -5,6 +5,6 @@ class MemberService
       req.params['perPage'] = 25
   end
     all_members = JSON.parse(resp.body, symbolize_names: true)
-    # MemberFacade.get_objects(all_members)
+    MemberFacade.get_objects(all_members)
   end
 end
