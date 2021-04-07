@@ -1,0 +1,23 @@
+<p><%= @parsed.length %> people who live in the <%= params[:nation] %></p>
+
+<% @people.each do |person| %>
+  <div style="border: 1px solid black;">
+    <p>Name: <%= person[:name] %></p>
+    <li>Allies:
+      <% if person[:allies].empty? %>
+        None
+      <% else  %>
+        <%= person[:allies] %>
+      <% end  %>
+    </li>
+    <dd>Enemies:
+      <% if person[:enemies].empty? %>
+        None
+      <% else  %>
+        <%= person[:enemies] %>
+      <% end  %>
+    </dd>
+    <em>Affiliation: <%= person[:affiliation] %></em>
+    <img src="<%= person[:photo] %>" alt="photo">
+  </div>
+<% end  %>
