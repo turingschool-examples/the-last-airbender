@@ -1,0 +1,29 @@
+<h1> Members of <%= @nation %></h1>
+<h3> Total People in Nation: <%= @members.count %> </h3>
+<% @members[0...25].each do |member| %>
+  <div class="member">
+  <% if member.include?(:photoUrl) %>
+     <img src=<%="#{member[:photoUrl]}"%> alt="member_photo">
+  <% end %>
+  <p> Name: <%= "#{member[:name]}" %></p>
+  <p> Allies:
+  <% if member[:allies].empty? %>
+    <p> None </p>
+  <% else %>
+    <% member[:allies].each do |ally| %>
+      <%= "#{ally}" %>
+    <% end %> </p>
+  <% end %>
+  <p> Enemies:
+  <% if member[:enemies].empty? %>
+    <p> None </p>
+  <% else %>
+    <% member[:enemies].each do |enemy| %>
+      <%= "#{enemy}" %>
+    <% end %> </p>
+  <% end %>
+  <% if member.include?(:affiliation) %>
+    <p><%= "#{member[:affiliation]}" %></p>
+  <% end %>
+  </div>
+<% end %>
